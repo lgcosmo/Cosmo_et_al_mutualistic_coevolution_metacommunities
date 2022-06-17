@@ -1,4 +1,4 @@
-# Cosmo_et_al_mutualistic_coevolution_metacommunities
+# Mutualistic coevolution and community diversity favor persistence in metacommunities under environmental changes
 
 This code base is using the Julia Language and [DrWatson](https://juliadynamics.github.io/DrWatson.jl/stable/)
 to make a reproducible scientific project named
