@@ -19,4 +19,6 @@ To (locally) reproduce this project, do the following:
    ```
 
 This will install all necessary packages for you to be able to run the scripts and
-everything should work out of the box, including correctly finding local paths.
+everything should work out of the box, including correctly finding local paths. 
+
+After installing everything, run the script "model_simulations.jl" located at the "scripts" folder.
