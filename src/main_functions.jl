@@ -261,6 +261,14 @@ end
 #-------------------------------------#
 
 function suitability!(;z::Array{Float64}, θ::Array{Float64}, ST::Array{Float64}, A::Array{Float64}, ρ::Float64, mi::Float64, time::Int)
+    
+    #Time index for species environmental optima with environmental change
+
+    if time>1
+        time_θ=time-1
+    else
+        time_θ=time
+    end
 
     @inbounds for k in 1:size(z,1) #Loop through each k site
         @inbounds for i in 1:size(z,2) #Loop through each species i at site k
@@ -284,8 +292,8 @@ function suitability!(;z::Array{Float64}, θ::Array{Float64}, ST::Array{Float64}
 
             meantm=ifelse(jsum>0.0, tm/jsum, 0.0)
             mut_suit=exp(-ρ*(mi*meantm))
-            env_suit=exp(-ρ*((1.0-mi)*((θ[k,i,time]-z[k,i,time])^2)))
-            env_suit2=exp(-ρ*(((θ[k,i,time]-z[k,i,time])^2))) #Environmental matching of pop k of species i at site k
+            env_suit=exp(-ρ*((1.0-mi)*((θ[k,i,time_θ]-z[k,i,time])^2)))
+            env_suit2=exp(-ρ*(((θ[k,i,time_θ]-z[k,i,time])^2))) #Environmental matching of pop k of species i at site k
             ST[k,i,time]=ifelse(meantm == 0.0, env_suit2, mut_suit*env_suit) #Suitability
             
         end

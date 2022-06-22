@@ -32,7 +32,7 @@ G=moore_neighborhood(n_patches=100, n=10, periodic=true) #Creating transition ma
 #tmax - Maximum simulation time
 #sim - Variable to identify the simulation
 
-r=coevo_metacom(n_sp=16, G=G, climchange=0.0, mi=0.5, α=0.1, ρ=0.1, σ=1.0, flow=0.05, tmax=500, sim=1)
+r=coevo_metacom(n_sp=2, G=G, climchange=0.0, mi=0.5, α=0.1, ρ=0.1, σ=1.0, flow=0.05, tmax=1000, sim=1)
 
 #Plotting occupancy over time for each species
 
